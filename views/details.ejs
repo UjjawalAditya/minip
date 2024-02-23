@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= products.name %></title>
+    <style>
+        h1{
+            color:#86A7FC;
+        }
+        #mydiv{
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            
+
+        }
+        .outer{
+            border: 7px solid #ccc;
+        
+             text-align: center;
+             padding: 10px;
+           margin: 20px;
+             }
+        body{
+            background-color:#86A7FC;
+        }
+    .my-button{
+        background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+
+    }
+    
+   
+</style>
+</head>
+<body>
+    <div class="outer">
+        <div id="mydiv">
+            <h1>Product is</h1>
+            <h1><%= products.name %></h1>
+            <ul>
+                <b><li> price is:<%= products.price %></li></b>
+                <b> <li>category is:<%= products.category%></li></b>
+            </ul>
+            <form action="/products/<%= products.id %>?_method=DELETE" method="post">
+                <button class="my-button">DELETE</button>
+            </form>
+            <a href="/products/<%= products._id %>/edit">EDIT</a>
+        </div>
+    </div>
+    
+   
+    
+</body>
+</html>

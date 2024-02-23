@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All products</title>
+</head>
+<style>
+    body{
+        background-color: #86A7FC;;
+    }
+    div{
+        border: 1px solid #ccc;
+        
+        text-align: center;
+    }
+    #mydiv{
+        background-color: white;
+    }
+
+</style>
+<body>
+    <div>
+        <div id="mydiv">
+            <h1>Farms are !!!!!</h1>
+            <br>
+            <ul>
+            <% for (let f of farms){ %>
+               
+                <li><a href="/farms/<%= f._id %>"><%= f.name %></a></li>
+                
+                
+                <% } %>
+            </ul>
+            <!-- <a href="products/new"><h5>NEW</h5></a> -->
+        </div>
+        
+        
+    </div>
+   
+
+    
+</body>
+</html>

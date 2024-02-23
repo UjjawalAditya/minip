@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= farm.name %></title>
+    <style>
+        h1{
+            color:#86A7FC;
+        }
+        #mydiv{
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            
+
+        }
+        .outer{
+            border: 7px solid #ccc;
+        
+             text-align: center;
+             padding: 10px;
+           margin: 20px;
+             }
+        body{
+            background-color:#86A7FC;
+        }
+    .my-button{
+        background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+
+    }
+    
+   
+</style>
+</head>
+<body>
+    <div class="outer">
+        <div id="mydiv">
+            <h1>Farms are is</h1>
+            <h1><%= farm.name %></h1>
+            <ul>
+               City:<%=farm.city %>
+               <br>
+               Email:<%= farm.email %>
+               <br>
+               
+            <a href="/farms">All Farms</a>
+            </ul>
+            <ul>
+                <h1>Farm Products are</h1>
+                <% for(let p of farm.products) {%>
+                    <br>
+                    <li> Name:<%=p.name %></li>
+                    
+                    <li>  price: <%=p.price %></li>
+                   <li> category:<%=p.category %></li>
+                    <% } %>
+                    
+            </ul>
+            <a href="/farms/<%=farm._id %>/products/new">Add Product</a>
+            
+            
+        </div>
+    </div>
+    
+   
+    
+</body>
+</html>

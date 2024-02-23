@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+        body{
+            background-color: #86A7FC;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit</h1>
+    <form action="/products/<%=products._id%>?_method=PUT" method="post">
+        <label for="name" >Name :</label>
+        <input type="text" name="name" id="name" placeholder="Name" value="<%=products.name %>">
+        <label for="price">price(unit):</label>
+        <input type="number" name="price" id="price" placeholder="price" value="<%= products.price %>">
+        <label for="category">category:</label>
+        <select name="category" id ="category">
+            <option value="fruit">fruit</option>
+            <option value="vegetable">vegetable</option>
+            <option value="dairy">dairy</option>
+        </select>
+        
+        <button>Add</button>
+    </form>
+</body>
+</html>
